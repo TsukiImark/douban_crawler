@@ -1,0 +1,12 @@
+2026-05-14 00:15:56 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-14 00:15:56 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-14 00:15:56 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-14 00:15:56 - douban_main - INFO - 从数据库加载了 250 部已有电影（跳过列表页和详情页）
+2026-05-14 00:16:03 - douban_main - INFO - Selenium爬取完成: 250 部电影
+2026-05-14 00:16:03 - douban_main - INFO - >>> 阶段3: 海报下载开始 <<<
+2026-05-14 00:16:03 - douban_main - INFO - 已有 250 张海报，跳过
+2026-05-14 00:16:03 - douban_main - INFO - >>> 阶段4: 数据存储开始 <<<
+2026-05-14 00:16:03 - douban_main - INFO - 新增电影: 0, 跳过已有: 250
+2026-05-14 00:16:04 - douban_main - INFO - 数据存储完成: {'total_movies': 250, 'total_comments': 5000}
+2026-05-14 00:16:04 - douban_main - INFO - >>> 阶段5: 数据清洗与分析开始 <<<
+2026-05-14 00:16:05 - douban_main - INFO - 从数据库加载: 250 部电影, 5000 条短评

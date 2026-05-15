@@ -1,0 +1,28 @@
+2026-05-13 14:39:26 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-13 14:39:26 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-13 14:39:26 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-13 14:39:29 - douban_main - ERROR - Selenium爬取异常: SessionNotCreatedException: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff6a34bd685+14ef5]
+	chromedriver!GetHandleVerifier [0x7ff6a34bd6f0+14f60]
+	chromedriver!(No symbol) [0x7ff6a320d59d]
+	chromedriver!(No symbol) [0x7ff6a324e6fb]
+	chromedriver!(No symbol) [0x7ff6a3249b59]
+	chromedriver!(No symbol) [0x7ff6a329d9e1]
+	chromedriver!(No symbol) [0x7ff6a329d246]
+	chromedriver!(No symbol) [0x7ff6a3259608]
+	chromedriver!(No symbol) [0x7ff6a325a4f3]
+	chromedriver!GetHandleVerifier [0x7ff6a37bb719+312f89]
+	chromedriver!GetHandleVerifier [0x7ff6a37b5c2b+30d49b]
+	chromedriver!GetHandleVerifier [0x7ff6a37d8fb2+330822]
+	chromedriver!GetHandleVerifier [0x7ff6a34da435+31ca5]
+	chromedriver!GetHandleVerifier [0x7ff6a34e2e2c+3a69c]
+	chromedriver!GetHandleVerifier [0x7ff6a34c6a24+1e294]
+	chromedriver!GetHandleVerifier [0x7ff6a34c6bb4+1e424]
+	chromedriver!GetHandleVerifier [0x7ff6a34ab2d7+2b47]
+	KERNEL32!BaseThreadInitThunk [0x7ffd57cae957+17]
+	ntdll!RtlUserThreadStart [0x7ffd5874427c+2c]
+
+2026-05-13 14:39:29 - douban_main - INFO - >>> 阶段5: 数据清洗与分析开始 <<<
+2026-05-13 14:39:30 - douban_main - INFO - 从数据库加载: 0 部电影, 0 条短评
+2026-05-13 14:39:30 - douban_main - ERROR - 分析异常: KeyError: 'rank'

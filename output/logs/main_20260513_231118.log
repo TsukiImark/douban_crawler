@@ -1,0 +1,6 @@
+2026-05-13 23:11:18 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-13 23:11:18 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-13 23:11:18 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-13 23:11:18 - douban_main - INFO - 从数据库加载了 250 部已有电影（跳过列表页和详情页）
+2026-05-13 23:58:57 - douban_main - INFO - Selenium爬取完成: 250 部电影
+2026-05-13 23:58:57 - douban_main - INFO - >>> 阶段3: 海报下载开始 <<<

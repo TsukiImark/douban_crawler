@@ -1,0 +1,8 @@
+2026-05-13 12:09:24 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-13 12:09:24 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-13 12:09:24 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-13 13:36:36 - douban_main - INFO - 中间保存: 列表页+详情页数据写入数据库...
+2026-05-13 13:36:36 - douban_main - INFO - >>> 阶段4: 数据存储开始 <<<
+2026-05-13 13:36:36 - douban_main - ERROR - 数据存储异常: ProgrammingError: Incorrect number of bindings supplied. The current statement uses 15, and there are 14 supplied.
+2026-05-13 13:36:36 - douban_main - INFO - Selenium爬取完成: 250 部电影
+2026-05-13 13:36:36 - douban_main - INFO - >>> 阶段3: 海报下载开始 <<<
