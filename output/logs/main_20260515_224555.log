@@ -1,0 +1,4 @@
+2026-05-15 22:45:55 - douban_main - INFO - >>> 阶段5: 数据清洗与分析开始 <<<
+2026-05-15 22:45:58 - douban_main - INFO - 从数据库加载: 250 部电影, 5000 条短评
+2026-05-15 22:46:45 - douban_main - INFO - 情感统计已导出: D:\db\douban-movie-crawler-250\output\data\sentiment_stats.json
+2026-05-15 22:46:45 - douban_main - INFO - 关键词已导出: D:\db\douban-movie-crawler-250\output\data\keywords.csv

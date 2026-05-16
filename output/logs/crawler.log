@@ -4120,3 +4120,106 @@ Stacktrace:
 2026-05-14 01:08:02 - sentiment_analyzer - INFO - 开始分词提取关键词...
 2026-05-14 01:08:04 - sentiment_analyzer - INFO - 关键词提取完成: 30 个
 2026-05-14 01:08:04 - sentiment_analyzer - INFO - 词云图已生成
+2026-05-15 20:56:53 - visualizer - INFO - 已注册中文字体: SimHei (C:/Windows/Fonts/simhei.ttf)
+2026-05-15 20:56:53 - data_cleaner - INFO - 已加载 250 部电影, 5000 条短评
+2026-05-15 20:56:53 - data_cleaner - INFO - 电影数据清洗完成: 250 条有效记录
+2026-05-15 20:56:53 - data_cleaner - INFO - 短评数据清洗完成: 4993 条有效记录
+2026-05-15 20:56:53 - data_exporter - INFO - 电影数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\movies.csv (250条)
+2026-05-15 20:56:53 - data_exporter - INFO - 短评数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\comments.csv (4993条)
+2026-05-15 20:56:53 - data_exporter - INFO - 电影数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\movies.json
+2026-05-15 20:56:54 - data_exporter - INFO - 短评数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\comments.json
+2026-05-15 20:56:54 - visualizer - INFO - 开始生成可视化图表...
+2026-05-15 20:56:54 - visualizer - INFO - 图表已生成: 评分分布直方图
+2026-05-15 20:56:54 - visualizer - INFO - 图表已生成: 类型分布饼图
+2026-05-15 20:56:54 - visualizer - INFO - 图表已生成: 评分与人数散点图
+2026-05-15 20:56:55 - visualizer - INFO - 图表已生成: 导演分布柱状图
+2026-05-15 20:56:55 - visualizer - INFO - 图表已生成: 时间趋势线图
+2026-05-15 20:56:55 - visualizer - INFO - 图表已生成: 短评星级分布
+2026-05-15 20:56:55 - visualizer - INFO - 可视化完成，共生成 6 张图表
+2026-05-15 20:56:55 - sentiment_analyzer - INFO - 开始情感分析...
+2026-05-15 20:57:38 - sentiment_analyzer - INFO - 情感分析完成: 4956 条
+2026-05-15 20:57:38 - sentiment_analyzer - INFO - 开始分词提取关键词...
+2026-05-15 20:57:39 - sentiment_analyzer - INFO - 关键词提取完成: 30 个
+2026-05-15 20:57:40 - sentiment_analyzer - INFO - 词云图已生成
+2026-05-15 21:05:34 - data_cleaner - INFO - 已加载 250 部电影, 5000 条短评
+2026-05-15 21:05:34 - data_cleaner - INFO - 电影数据清洗完成: 250 条有效记录
+2026-05-15 21:05:34 - data_cleaner - INFO - 短评数据清洗完成: 4993 条有效记录
+2026-05-15 21:05:34 - data_exporter - INFO - 电影数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\movies.csv (250条)
+2026-05-15 21:05:34 - data_exporter - INFO - 短评数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\comments.csv (4993条)
+2026-05-15 21:05:34 - data_exporter - INFO - 电影数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\movies.json
+2026-05-15 21:05:35 - data_exporter - INFO - 短评数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\comments.json
+2026-05-15 21:05:35 - visualizer - INFO - Generating charts...
+2026-05-15 21:05:35 - visualizer - INFO - Chart saved: Rating Histogram
+2026-05-15 21:05:35 - visualizer - INFO - Chart saved: Genre Pie
+2026-05-15 21:05:35 - visualizer - INFO - Chart saved: Rating vs Votes Scatter
+2026-05-15 21:05:35 - visualizer - INFO - Chart saved: Director Bar
+2026-05-15 21:05:36 - visualizer - INFO - Chart saved: Year Trend
+2026-05-15 21:05:36 - visualizer - INFO - Chart saved: Comment Stars
+2026-05-15 21:05:36 - visualizer - INFO - Charts generated: 6
+2026-05-15 21:05:36 - sentiment_analyzer - INFO - 开始情感分析...
+2026-05-15 21:06:20 - sentiment_analyzer - INFO - 情感分析完成: 4956 条
+2026-05-15 21:06:20 - sentiment_analyzer - INFO - 开始分词提取关键词...
+2026-05-15 21:06:21 - sentiment_analyzer - INFO - 关键词提取完成: 30 个
+2026-05-15 21:06:22 - sentiment_analyzer - INFO - Word cloud saved
+2026-05-15 21:10:02 - data_cleaner - INFO - 已加载 250 部电影, 5000 条短评
+2026-05-15 21:10:02 - data_cleaner - INFO - 电影数据清洗完成: 250 条有效记录
+2026-05-15 21:10:02 - data_cleaner - INFO - 短评数据清洗完成: 4993 条有效记录
+2026-05-15 21:10:02 - data_exporter - INFO - 电影数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\movies.csv (250条)
+2026-05-15 21:10:02 - data_exporter - INFO - 短评数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\comments.csv (4993条)
+2026-05-15 21:10:02 - data_exporter - INFO - 电影数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\movies.json
+2026-05-15 21:10:02 - data_exporter - INFO - 短评数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\comments.json
+2026-05-15 21:10:02 - visualizer - INFO - Generating charts...
+2026-05-15 21:10:03 - visualizer - INFO - Chart saved: Rating Histogram
+2026-05-15 21:10:03 - visualizer - INFO - Chart saved: Genre Pie
+2026-05-15 21:10:03 - visualizer - INFO - Chart saved: Rating vs Votes Scatter
+2026-05-15 21:10:03 - visualizer - INFO - Chart saved: Director Bar
+2026-05-15 21:10:04 - visualizer - INFO - Chart saved: Year Trend
+2026-05-15 21:10:04 - visualizer - INFO - Chart saved: Comment Stars
+2026-05-15 21:10:04 - visualizer - INFO - Charts generated: 6
+2026-05-15 21:10:04 - sentiment_analyzer - INFO - 开始情感分析...
+2026-05-15 21:10:56 - sentiment_analyzer - INFO - 情感分析完成: 4956 条
+2026-05-15 21:10:56 - sentiment_analyzer - INFO - 开始分词提取关键词...
+2026-05-15 21:10:59 - sentiment_analyzer - INFO - 关键词提取完成: 30 个
+2026-05-15 21:10:59 - sentiment_analyzer - INFO - Word cloud saved
+2026-05-15 21:17:32 - visualizer - INFO - Registered CJK font: C:/Windows/Fonts/simhei.ttf
+2026-05-15 21:17:32 - data_cleaner - INFO - 已加载 250 部电影, 5000 条短评
+2026-05-15 21:17:32 - data_cleaner - INFO - 电影数据清洗完成: 250 条有效记录
+2026-05-15 21:17:32 - data_cleaner - INFO - 短评数据清洗完成: 4993 条有效记录
+2026-05-15 21:17:32 - data_exporter - INFO - 电影数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\movies.csv (250条)
+2026-05-15 21:17:32 - data_exporter - INFO - 短评数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\comments.csv (4993条)
+2026-05-15 21:17:32 - data_exporter - INFO - 电影数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\movies.json
+2026-05-15 21:17:32 - data_exporter - INFO - 短评数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\comments.json
+2026-05-15 21:17:33 - visualizer - INFO - Generating charts...
+2026-05-15 21:17:33 - visualizer - INFO - Chart saved: Rating Histogram
+2026-05-15 21:17:33 - visualizer - INFO - Chart saved: Genre Pie
+2026-05-15 21:17:33 - visualizer - INFO - Chart saved: Rating vs Votes Scatter
+2026-05-15 21:17:33 - visualizer - INFO - Chart saved: Director Bar
+2026-05-15 21:17:34 - visualizer - INFO - Chart saved: Year Trend
+2026-05-15 21:17:34 - visualizer - INFO - Chart saved: Comment Stars
+2026-05-15 21:17:34 - visualizer - INFO - Charts generated: 6
+2026-05-15 21:17:34 - sentiment_analyzer - INFO - 开始情感分析...
+2026-05-15 21:18:33 - sentiment_analyzer - INFO - 情感分析完成: 4956 条
+2026-05-15 21:18:33 - sentiment_analyzer - INFO - 开始分词提取关键词...
+2026-05-15 21:18:35 - sentiment_analyzer - INFO - 关键词提取完成: 30 个
+2026-05-15 21:18:35 - sentiment_analyzer - INFO - Word cloud saved
+2026-05-15 22:45:58 - visualizer - INFO - Registered CJK font: C:/Windows/Fonts/simhei.ttf
+2026-05-15 22:45:58 - data_cleaner - INFO - 已加载 250 部电影, 5000 条短评
+2026-05-15 22:45:58 - data_cleaner - INFO - 电影数据清洗完成: 250 条有效记录
+2026-05-15 22:45:58 - data_cleaner - INFO - 短评数据清洗完成: 4993 条有效记录
+2026-05-15 22:45:58 - data_exporter - INFO - 电影数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\movies.csv (250条)
+2026-05-15 22:45:58 - data_exporter - INFO - 短评数据已导出CSV: D:\db\douban-movie-crawler-250\output\data\comments.csv (4993条)
+2026-05-15 22:45:58 - data_exporter - INFO - 电影数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\movies.json
+2026-05-15 22:45:58 - data_exporter - INFO - 短评数据已导出JSON: D:\db\douban-movie-crawler-250\output\data\comments.json
+2026-05-15 22:45:58 - visualizer - INFO - Generating charts...
+2026-05-15 22:45:58 - visualizer - INFO - Chart saved: Rating Histogram
+2026-05-15 22:45:58 - visualizer - INFO - Chart saved: Genre Pie
+2026-05-15 22:45:59 - visualizer - INFO - Chart saved: Rating vs Votes Scatter
+2026-05-15 22:45:59 - visualizer - INFO - Chart saved: Director Bar
+2026-05-15 22:45:59 - visualizer - INFO - Chart saved: Year Trend
+2026-05-15 22:45:59 - visualizer - INFO - Chart saved: Comment Stars
+2026-05-15 22:45:59 - visualizer - INFO - Charts generated: 6
+2026-05-15 22:45:59 - sentiment_analyzer - INFO - 开始情感分析...
+2026-05-15 22:46:43 - sentiment_analyzer - INFO - 情感分析完成: 4956 条
+2026-05-15 22:46:43 - sentiment_analyzer - INFO - 开始分词提取关键词...
+2026-05-15 22:46:44 - sentiment_analyzer - INFO - 关键词提取完成: 30 个
+2026-05-15 22:46:45 - sentiment_analyzer - INFO - Word cloud saved
