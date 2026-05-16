@@ -173,13 +173,14 @@ class SentimentAnalyzer:
 
             font_path = WORDCLOUD_FONT_PATH
             if font_path is None:
-                # 尝试自动检测中文字体
-                import matplotlib.font_manager as fm
-                chinese_fonts = [f for f in fm.findSystemFonts() if "simhei" in f.lower() or "msyh" in f.lower()]
-                if chinese_fonts:
-                    font_path = chinese_fonts[0]
-                else:
-                    font_path = fm.findSystemFonts()[0]
+                for _fp in [
+                    "C:/Windows/Fonts/simhei.ttf",
+                    "C:/Windows/Fonts/msyh.ttc",
+                    "C:/Windows/Fonts/simsun.ttc",
+                ]:
+                    if os.path.exists(_fp):
+                        font_path = _fp
+                        break
 
             wc = WordCloud(
                 font_path=font_path,
@@ -195,13 +196,13 @@ class SentimentAnalyzer:
             fig, ax = plt.subplots(figsize=(12, 8))
             ax.imshow(wc, interpolation="bilinear")
             ax.axis("off")
-            ax.set_title("豆瓣电影Top250 短评词云", fontsize=16, fontweight="bold")
+            ax.set_title("Douban Top250 - Comment Word Cloud", fontsize=16, fontweight="bold")
 
             path = os.path.join(CHARTS_DIR, "07_wordcloud.png")
             fig.tight_layout()
             fig.savefig(path, dpi=150, bbox_inches="tight")
             plt.close(fig)
-            logger.info(f"词云图已生成")
+            logger.info(f"Word cloud saved")
             return path
         except Exception as e:
             logger.error(f"词云生成失败: {e}")

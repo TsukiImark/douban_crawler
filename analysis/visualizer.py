@@ -5,21 +5,28 @@ import os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import seaborn as sns
 import numpy as np
 import pandas as pd
 from collections import Counter
-from config import CHARTS_DIR, MATPLOTLIB_FONT, WORDCLOUD_FONT_PATH, WORDCLOUD_WIDTH, WORDCLOUD_HEIGHT, WORDCLOUD_MAX_WORDS
+from config import CHARTS_DIR
 from utils.logger import get_logger
 
 logger = get_logger("visualizer")
 
-# 设置中文字体
-try:
-    plt.rcParams["font.sans-serif"] = [MATPLOTLIB_FONT, "SimHei", "DejaVu Sans"]
-    plt.rcParams["axes.unicode_minus"] = False
-except Exception:
-    pass
+# 查找中文字体文件（用于渲染数据中的中文：类型名、导演名、星级等）
+_CJK_FONT_PROP = None
+for _fp in [
+    "C:/Windows/Fonts/simhei.ttf",
+    "C:/Windows/Fonts/msyh.ttc",
+    "C:/Windows/Fonts/simsun.ttc",
+]:
+    if os.path.exists(_fp):
+        fm.fontManager.addfont(_fp)
+        _CJK_FONT_PROP = fm.FontProperties(fname=_fp)
+        logger.info(f"Registered CJK font: {_fp}")
+        break
 
 
 class Visualizer:
@@ -41,12 +48,12 @@ class Visualizer:
         ratings = self.movies_df["rating"].dropna()
 
         ax.hist(ratings, bins=20, edgecolor="white", color=sns.color_palette("viridis", 1), alpha=0.8)
-        ax.axvline(ratings.mean(), color="red", linestyle="--", linewidth=2, label=f'平均分: {ratings.mean():.2f}')
-        ax.axvline(ratings.median(), color="orange", linestyle="--", linewidth=2, label=f'中位数: {ratings.median():.2f}')
+        ax.axvline(ratings.mean(), color="red", linestyle="--", linewidth=2, label=f'Mean: {ratings.mean():.2f}')
+        ax.axvline(ratings.median(), color="orange", linestyle="--", linewidth=2, label=f'Median: {ratings.median():.2f}')
 
-        ax.set_xlabel("豆瓣评分", fontsize=12)
-        ax.set_ylabel("电影数量", fontsize=12)
-        ax.set_title("豆瓣电影Top250 评分分布直方图", fontsize=14, fontweight="bold")
+        ax.set_xlabel("Douban Rating", fontsize=12)
+        ax.set_ylabel("Movie Count", fontsize=12)
+        ax.set_title("Douban Top250 - Rating Distribution", fontsize=14, fontweight="bold")
         ax.legend()
         ax.grid(True, alpha=0.3)
 
@@ -55,7 +62,7 @@ class Visualizer:
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
         self.chart_paths.append(path)
-        logger.info(f"图表已生成: 评分分布直方图")
+        logger.info(f"Chart saved: Rating Histogram")
         return path
 
     def chart_genre_pie(self):
@@ -82,15 +89,16 @@ class Visualizer:
         for t in autotexts:
             t.set_fontsize(9)
 
-        ax.legend(wedges, labels, title="电影类型", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
-        ax.set_title("豆瓣电影Top250 类型分布饼图", fontsize=14, fontweight="bold")
+        ax.legend(wedges, labels, title="Genre", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1),
+                  prop=_CJK_FONT_PROP if _CJK_FONT_PROP else None)
+        ax.set_title("Douban Top250 - Genre Distribution", fontsize=14, fontweight="bold")
 
         path = os.path.join(self.output_dir, "02_genre_pie.png")
         fig.tight_layout()
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
         self.chart_paths.append(path)
-        logger.info(f"图表已生成: 类型分布饼图")
+        logger.info(f"Chart saved: Genre Pie")
         return path
 
     def chart_rating_vs_count_scatter(self):
@@ -105,7 +113,7 @@ class Visualizer:
             c=df["rating"], cmap="viridis", alpha=0.6,
             s=df["rating_count"] / 10000, edgecolors="gray", linewidth=0.3
         )
-        plt.colorbar(scatter, ax=ax, label="评分")
+        plt.colorbar(scatter, ax=ax, label="Rating")
 
         # 趋势线
         # 去除异常值防止SVD不收敛
@@ -121,11 +129,11 @@ class Visualizer:
         z = np.polyfit(x, y, 1)
         p = np.poly1d(z)
         x_line = np.linspace(df["rating_count"].min() / 10000, df["rating_count"].max() / 10000, 100)
-        ax.plot(x_line, p(x_line), "r--", linewidth=2, label=f"趋势线 (r={correlation:.3f})")
+        ax.plot(x_line, p(x_line), "r--", linewidth=2, label=f"Trend (r={correlation:.3f})")
 
-        ax.set_xlabel("评价人数 (万)", fontsize=12)
-        ax.set_ylabel("豆瓣评分", fontsize=12)
-        ax.set_title(f"评分 vs 评价人数 散点图 (相关系数: {correlation:.3f})", fontsize=14, fontweight="bold")
+        ax.set_xlabel("Rating Count (10k)", fontsize=12)
+        ax.set_ylabel("Douban Rating", fontsize=12)
+        ax.set_title(f"Rating vs Vote Count (r={correlation:.3f})", fontsize=14, fontweight="bold")
         ax.legend()
         ax.grid(True, alpha=0.3)
 
@@ -134,7 +142,7 @@ class Visualizer:
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
         self.chart_paths.append(path)
-        logger.info(f"图表已生成: 评分与人数散点图")
+        logger.info(f"Chart saved: Rating vs Votes Scatter")
         return path
 
     def chart_director_bar(self):
@@ -150,10 +158,10 @@ class Visualizer:
 
         bars = ax.barh(range(len(names)), counts, color=sns.color_palette("viridis", len(names)))
         ax.set_yticks(range(len(names)))
-        ax.set_yticklabels(names)
+        ax.set_yticklabels(names, fontproperties=_CJK_FONT_PROP)
         ax.invert_yaxis()
-        ax.set_xlabel("入选Top250作品数", fontsize=12)
-        ax.set_title("豆瓣电影Top250 导演分布 (Top12)", fontsize=14, fontweight="bold")
+        ax.set_xlabel("Films in Top250", fontsize=12)
+        ax.set_title("Douban Top250 - Top 12 Directors", fontsize=14, fontweight="bold")
         ax.grid(True, alpha=0.3, axis="x")
 
         for i, (bar, count) in enumerate(zip(bars, counts)):
@@ -164,7 +172,7 @@ class Visualizer:
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
         self.chart_paths.append(path)
-        logger.info(f"图表已生成: 导演分布柱状图")
+        logger.info(f"Chart saved: Director Bar")
         return path
 
     def chart_year_trend(self):
@@ -178,18 +186,18 @@ class Visualizer:
         ).reset_index()
         yearly = yearly[yearly["count"] >= 2]
 
-        ax1.plot(yearly["release_year"], yearly["avg_rating"], "o-", color="#2E86AB", linewidth=2, label="平均评分")
+        ax1.plot(yearly["release_year"], yearly["avg_rating"], "o-", color="#2E86AB", linewidth=2, label="Avg Rating")
         ax1.fill_between(yearly["release_year"], yearly["avg_rating"], alpha=0.2, color="#2E86AB")
-        ax1.set_xlabel("上映年份", fontsize=12)
-        ax1.set_ylabel("平均评分", fontsize=12, color="#2E86AB")
+        ax1.set_xlabel("Release Year", fontsize=12)
+        ax1.set_ylabel("Avg Rating", fontsize=12, color="#2E86AB")
         ax1.tick_params(axis="y", labelcolor="#2E86AB")
 
         ax2 = ax1.twinx()
-        ax2.bar(yearly["release_year"], yearly["count"], alpha=0.3, color="#A23B72", label="电影数量")
-        ax2.set_ylabel("电影数量", fontsize=12, color="#A23B72")
+        ax2.bar(yearly["release_year"], yearly["count"], alpha=0.3, color="#A23B72", label="Movie Count")
+        ax2.set_ylabel("Movie Count", fontsize=12, color="#A23B72")
         ax2.tick_params(axis="y", labelcolor="#A23B72")
 
-        ax1.set_title("豆瓣电影Top250 上映年份趋势 (评分 & 数量)", fontsize=14, fontweight="bold")
+        ax1.set_title("Douban Top250 - Yearly Trend (Rating & Count)", fontsize=14, fontweight="bold")
         lines1, labels1 = ax1.get_legend_handles_labels()
         lines2, labels2 = ax2.get_legend_handles_labels()
         ax1.legend(lines1 + lines2, labels1 + labels2, loc="upper left")
@@ -200,13 +208,13 @@ class Visualizer:
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
         self.chart_paths.append(path)
-        logger.info(f"图表已生成: 时间趋势线图")
+        logger.info(f"Chart saved: Year Trend")
         return path
 
     def chart_comment_stars_pie(self):
         """图6 (加分): 短评星级分布饼图"""
         if self.comments_df is None or "rating" not in self.comments_df.columns:
-            logger.warning("无法生成短评星级图: 数据不足")
+            logger.warning("Cannot generate comment star chart: insufficient data")
             return None
 
         fig, ax = plt.subplots(figsize=(10, 8))
@@ -215,23 +223,24 @@ class Visualizer:
         colors = sns.color_palette("RdYlGn", len(stars))[::-1]
         wedges, texts, autotexts = ax.pie(
             stars.values, labels=stars.index, autopct="%1.1f%%",
-            colors=colors, startangle=90
+            colors=colors, startangle=90,
+            textprops={"fontproperties": _CJK_FONT_PROP} if _CJK_FONT_PROP else None,
         )
         for t in autotexts:
             t.set_fontsize(10)
-        ax.set_title("短评星级分布", fontsize=14, fontweight="bold")
+        ax.set_title("Comment Star Distribution", fontsize=14, fontweight="bold")
 
         path = os.path.join(self.output_dir, "06_comment_stars.png")
         fig.tight_layout()
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
         self.chart_paths.append(path)
-        logger.info(f"图表已生成: 短评星级分布")
+        logger.info(f"Chart saved: Comment Stars")
         return path
 
     def generate_all_charts(self):
         """生成所有图表"""
-        logger.info("开始生成可视化图表...")
+        logger.info("Generating charts...")
         self.chart_paths = []
 
         charts = [
@@ -247,5 +256,5 @@ class Visualizer:
             charts.append(self.chart_comment_stars_pie())
 
         valid_charts = [c for c in charts if c is not None]
-        logger.info(f"可视化完成，共生成 {len(valid_charts)} 张图表")
+        logger.info(f"Charts generated: {len(valid_charts)}")
         return valid_charts
