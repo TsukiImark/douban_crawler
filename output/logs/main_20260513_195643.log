@@ -1,0 +1,27 @@
+2026-05-13 19:56:43 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-13 19:56:43 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-13 19:56:43 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-13 19:56:43 - douban_main - INFO - 从数据库加载了 250 部已有电影（跳过列表页和详情页）
+2026-05-13 20:02:36 - douban_main - ERROR - Selenium爬取异常: InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff6c6a6d685+14ef5]
+	chromedriver!GetHandleVerifier [0x7ff6c6a6d6f0+14f60]
+	chromedriver!(No symbol) [0x7ff6c67bd386]
+	chromedriver!(No symbol) [0x7ff6c6808683]
+	chromedriver!(No symbol) [0x7ff6c683f672]
+	chromedriver!(No symbol) [0x7ff6c683948f]
+	chromedriver!(No symbol) [0x7ff6c6838c53]
+	chromedriver!(No symbol) [0x7ff6c6786325]
+	chromedriver!GetHandleVerifier [0x7ff6c6d6b719+312f89]
+	chromedriver!GetHandleVerifier [0x7ff6c6d65c2b+30d49b]
+	chromedriver!GetHandleVerifier [0x7ff6c6d88fb2+330822]
+	chromedriver!GetHandleVerifier [0x7ff6c6a8a435+31ca5]
+	chromedriver!GetHandleVerifier [0x7ff6c6a92e2c+3a69c]
+	chromedriver!(No symbol) [0x7ff6c67850bc]
+	chromedriver!GetHandleVerifier [0x7ff6c6ebf978+4671e8]
+	KERNEL32!BaseThreadInitThunk [0x7ffd57cae957+17]
+	ntdll!RtlUserThreadStart [0x7ffd5874427c+2c]
+
+2026-05-13 20:02:36 - douban_main - INFO - >>> 阶段5: 数据清洗与分析开始 <<<
+2026-05-13 20:02:38 - douban_main - INFO - 从数据库加载: 250 部电影, 1000 条短评
+2026-05-13 20:02:38 - douban_main - ERROR - 分析异常: LinAlgError: SVD did not converge in Linear Least Squares

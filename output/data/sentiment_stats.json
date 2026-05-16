@@ -1,0 +1,10 @@
+{
+  "positive": 4229,
+  "neutral": 246,
+  "negative": 481,
+  "total": 4956,
+  "positive_pct": 85.3,
+  "neutral_pct": 5.0,
+  "negative_pct": 9.7,
+  "avg_score": 0.8576
+}

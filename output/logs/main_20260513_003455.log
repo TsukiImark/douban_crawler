@@ -1,0 +1,6 @@
+2026-05-13 00:34:55 - douban_main - INFO - >>> 阶段1: requests爬虫开始 <<<
+2026-05-13 00:40:33 - douban_main - INFO - requests爬取完成: 75 部电影
+2026-05-13 00:40:33 - douban_main - INFO - >>> 阶段2: Selenium动态爬取开始 <<<
+2026-05-13 00:45:34 - douban_main - ERROR - Selenium爬取异常: NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+2026-05-13 00:45:34 - douban_main - INFO - >>> 阶段3: 海报下载开始 <<<

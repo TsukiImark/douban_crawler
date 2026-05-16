@@ -1,0 +1,5 @@
+2026-05-13 01:49:53 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-13 01:49:53 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-13 01:49:53 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-13 01:49:53 - douban_main - INFO - 提示: Chrome窗口会打开，请保持豆瓣已登录状态
+2026-05-13 01:49:53 - douban_main - INFO - 如果出现验证页面，请在Chrome窗口中手动完成验证

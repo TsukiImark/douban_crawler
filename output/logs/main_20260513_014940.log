@@ -1,0 +1,29 @@
+2026-05-13 01:49:40 - douban_main - INFO - 使用Selenium模式 (真实Chrome浏览器)
+2026-05-13 01:49:40 - douban_main - INFO - 提示: 请确保Chrome已登录豆瓣，如出现验证页面请手动完成
+2026-05-13 01:49:40 - douban_main - INFO - >>> Selenium完整爬取开始 <<<
+2026-05-13 01:49:40 - douban_main - INFO - 提示: Chrome窗口会打开，请保持豆瓣已登录状态
+2026-05-13 01:49:40 - douban_main - INFO - 如果出现验证页面，请在Chrome窗口中手动完成验证
+2026-05-13 01:49:43 - douban_main - ERROR - Selenium爬取异常: SessionNotCreatedException: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff70df7d685+14ef5]
+	chromedriver!GetHandleVerifier [0x7ff70df7d6f0+14f60]
+	chromedriver!(No symbol) [0x7ff70dccd59d]
+	chromedriver!(No symbol) [0x7ff70dd0e6fb]
+	chromedriver!(No symbol) [0x7ff70dd09b59]
+	chromedriver!(No symbol) [0x7ff70dd5d9e1]
+	chromedriver!(No symbol) [0x7ff70dd5d246]
+	chromedriver!(No symbol) [0x7ff70dd19608]
+	chromedriver!(No symbol) [0x7ff70dd1a4f3]
+	chromedriver!GetHandleVerifier [0x7ff70e27b719+312f89]
+	chromedriver!GetHandleVerifier [0x7ff70e275c2b+30d49b]
+	chromedriver!GetHandleVerifier [0x7ff70e298fb2+330822]
+	chromedriver!GetHandleVerifier [0x7ff70df9a435+31ca5]
+	chromedriver!GetHandleVerifier [0x7ff70dfa2e2c+3a69c]
+	chromedriver!GetHandleVerifier [0x7ff70df86a24+1e294]
+	chromedriver!GetHandleVerifier [0x7ff70df86bb4+1e424]
+	chromedriver!GetHandleVerifier [0x7ff70df6b2d7+2b47]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2097e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ffc217ec3fc+2c]
+
+2026-05-13 01:49:43 - douban_main - INFO - >>> 阶段5: 数据清洗与分析开始 <<<
+2026-05-13 01:49:44 - douban_main - ERROR - 分析异常: ModuleNotFoundError: No module named 'pymysql'
